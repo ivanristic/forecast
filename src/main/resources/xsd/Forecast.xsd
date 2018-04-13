@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:tns="http://www.sargije.com/ws/hidmet/entities"
+           targetNamespace="http://www.sargije.com/ws/hidmet/entities" 
+           elementFormDefault="qualified">
+
+    
+        <xs:complexType name="CurrentForecast">
+            <xs:sequence>
+                <xs:element name="currentWeatherId" type="xs:long"/>
+                <xs:element name="temperature" type="xs:long"/>
+                <xs:element name="presure" type="xs:long"/>
+                <xs:element name="windDirection" type="xs:string"/>
+                <xs:element name="windSpeed" type="xs:string"/>
+                <xs:element name="humidity" type="xs:long"/>
+                <xs:element name="feelsLike" type="xs:long"/>
+                <xs:element name="image" type="xs:string"/>
+                <xs:element name="description" type="xs:string"/>
+                <xs:element name="tableTime" type="xs:date"/>
+                <xs:element name="syncTime" type="xs:date"/>
+                <xs:element name="active" type="xs:long" minOccurs="0"/>
+                <xs:element name="City" type="tns:City"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <xs:complexType name="City">
+            <xs:sequence>
+                <xs:element name="cityId" type="xs:long"/>
+                <xs:element name="cityName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+
+</xs:schema>

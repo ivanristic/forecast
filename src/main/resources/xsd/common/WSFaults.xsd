@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+						targetNamespace="http://www.telekomsrbija.com/ws/crm/WSFaults" 
+						xmlns:tns="http://www.telekomsrbija.com/ws/crm/WSFaults" 
+						elementFormDefault="unqualified">
+
+	<xsd:complexType name="FaultMessagesType">
+		<xsd:sequence>
+			<xsd:element name="FaultMessage" type="tns:FaultMessage" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="GenericFaultType">
+		<xsd:sequence>
+			<xsd:element name="FaultCode" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="FaultMessages" type="tns:FaultMessagesType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="FaultParametersType">
+		<xsd:sequence>
+			<xsd:element name="Parameter" type="xsd:string" minOccurs="0"
+				maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="FaultMessage">
+		<xsd:sequence>
+			<xsd:element name="MessageType" type="xsd:string" maxOccurs="1" minOccurs="1"></xsd:element>
+			<!-- DODAJE SE MESSAGE LEVEL, STO ZNACI DA JEDAN FAULT CODE MOZE IMATI VISE
+				PORUKA RAZLICITOG NIVOA (NPR 2 WARNINGA I 3 ERRORA) -->
+			<xsd:element name="MessageLevel" type="tns:MessageLevel"></xsd:element>
+			<xsd:element name="FaultMessageText" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+			<xsd:element name="FaultParameters" type="tns:FaultParametersType">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="Fault" type="tns:GenericFaultType"></xsd:element>
+	
+	<xsd:simpleType name="MessageLevel">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="INFO"></xsd:enumeration>
+			<xsd:enumeration value="WARNING"></xsd:enumeration>
+			<xsd:enumeration value="ERROR"></xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+</xsd:schema>
