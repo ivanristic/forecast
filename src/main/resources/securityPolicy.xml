@@ -2,6 +2,6 @@
 	xmlns:xwss="http://java.sun.com/xml/ns/xwss/config">
 
 	<xwss:RequireUsernameToken
-		passwordDigestRequired="true" nonceRequired="true" />
+		passwordDigestRequired="false" nonceRequired="false" />
 
 </xwss:SecurityConfiguration>

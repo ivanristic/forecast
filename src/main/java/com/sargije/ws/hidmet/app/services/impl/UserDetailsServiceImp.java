@@ -23,9 +23,6 @@ public class UserDetailsServiceImp implements UserDetailsService {
 	@Autowired
 	UsersRepository usersRepository;
 	
-	@Autowired
-	PasswordEncoder passwordEncoder;
-	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
@@ -36,6 +33,7 @@ public class UserDetailsServiceImp implements UserDetailsService {
 			builder = org.springframework.security.core.userdetails.User.withUsername(username);
 			//builder.password(new BCryptPasswordEncoder().encode(user.getPassword()));
 			builder.password(user.getPassword());
+			builder.accountExpired(!user.isEnabled());
 //			Iterator iterator =  user.getAuthoritieses().iterator();
 //			while(iterator.hasNext()){
 //				Authorities element = (Authorities) iterator.next();

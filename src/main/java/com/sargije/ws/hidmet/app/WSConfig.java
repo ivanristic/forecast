@@ -20,6 +20,7 @@ import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.server.EndpointInterceptor;
 import org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor;
 import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
+import org.springframework.ws.soap.security.xwss.XwsSecurityInterceptor;
 import org.springframework.ws.soap.server.endpoint.SoapFaultDefinition;
 import org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver;
 import org.springframework.ws.soap.server.endpoint.interceptor.SoapEnvelopeLoggingInterceptor;
@@ -36,10 +37,9 @@ import com.sargije.ws.hidmet.app.faults.ServiceFaultException;
 public class WSConfig extends WsConfigurerAdapter {
 	private static final Log LOG = LogFactory.getLog(WSConfig.class);
 	
-	@Autowired 
-	WSSecurityConfig wSSecurityConfig;
 	@Autowired
-	Wss4jSecurityInterceptor securityInterceptor;
+	//Wss4jSecurityInterceptor securityInterceptor;
+	XwsSecurityInterceptor securityInterceptor;
 	
 	@Bean
 	public SoapFaultMappingExceptionResolver exceptionResolver() {
@@ -93,11 +93,6 @@ public class WSConfig extends WsConfigurerAdapter {
 		//interceptors.add(new CustomEndpointInterceptor());
 		// interceptors.add(loggingInterceptor());
 		//interceptors.add(soapLoggingInterceptor());
-	}
-	
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-	    return new BCryptPasswordEncoder();
 	}
 	
 	@Bean
