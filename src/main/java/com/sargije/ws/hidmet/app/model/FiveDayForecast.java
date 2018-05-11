@@ -12,38 +12,38 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="hidmet", name="nedeljna")
+@Table(schema = "hidmet", name = "nedeljna")
 public class FiveDayForecast {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="n_id")
+	@Column(name = "n_id")
 	private Long fiveDayForecastId;
 
-	@Column(name="n_max_temp")
+	@Column(name = "n_max_temp")
 	private Long maxTemperature;
-	
-	@Column(name="n_min_temp")
+
+	@Column(name = "n_min_temp")
 	private Long minTemperature;
-	
-	@Column(name="n_active")
+
+	@Column(name = "n_active")
 	private Long active;
-	
-	@Column(name="n_table_time")
+
+	@Column(name = "n_table_time")
 	private Date tableTime;
-	
-	@Column(name="n_sync_time")
-	private Date syncTime;	
-	
-	@Column(name="n_image")
+
+	@Column(name = "n_sync_time")
+	private Date syncTime;
+
+	@Column(name = "n_image")
 	private String image;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="n_g_id", referencedColumnName="g_id")
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "n_g_id", referencedColumnName = "g_id")
 	private CityModel cityId;
 
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="n_d_id", referencedColumnName="d_id")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "n_d_id", referencedColumnName = "d_id")
 	private ForecastDate dateId;
 
 	public Long getFiveDayForecastId() {
@@ -117,5 +117,5 @@ public class FiveDayForecast {
 	public void setDateId(ForecastDate dateId) {
 		this.dateId = dateId;
 	}
-	
+
 }

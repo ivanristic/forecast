@@ -12,49 +12,49 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="hidmet", name="aktuelno")
+@Table(schema = "hidmet", name = "aktuelno")
 public class CurrentForecastModel {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="a_id")
+	@Column(name = "a_id")
 	private Long currentWeatherId;
 
-	@Column(name="a_temp")
+	@Column(name = "a_temp")
 	private Long temperature;
-	
-	@Column(name="a_presure")
+
+	@Column(name = "a_presure")
 	private Long presure;
-	
-	@Column(name="a_wind_direction")
+
+	@Column(name = "a_wind_direction")
 	private String windDirection;
 
-	@Column(name="a_wind_speed")
+	@Column(name = "a_wind_speed")
 	private String windSpeed;
-	
-	@Column(name="a_humidity")
+
+	@Column(name = "a_humidity")
 	private Long humidity;
-	
-	@Column(name="a_feels_like")
+
+	@Column(name = "a_feels_like")
 	private Long feelsLike;
-	
-	@Column(name="a_image")
+
+	@Column(name = "a_image")
 	private String image;
-	
-	@Column(name="a_description")
+
+	@Column(name = "a_description")
 	private String description;
-	
-	@Column(name="a_table_time")
+
+	@Column(name = "a_table_time")
 	private Date tableTime;
-	
-	@Column(name="a_sync_time")
-	private Date syncTime;	
-	
-	@Column(name="a_active")
+
+	@Column(name = "a_sync_time")
+	private Date syncTime;
+
+	@Column(name = "a_active")
 	private Long active;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="a_g_id", referencedColumnName="g_id")
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "a_g_id", referencedColumnName = "g_id")
 	private CityModel city;
 
 	public Long getCurrentWeatherId() {

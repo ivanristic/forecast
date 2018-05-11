@@ -12,20 +12,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="grad")
+@Table(name = "grad")
 public class CityModel {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="g_id")
+	@Column(name = "g_id")
 	private Long cityId;
-	
-	@Column(name="g_grad")
+
+	@Column(name = "g_grad")
 	private String cityName;
 
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="cityId")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cityId")
 	private Set<CityModel> cityFK = new HashSet<CityModel>();
-	
+
 	public Long getCityId() {
 		return cityId;
 	}
@@ -41,5 +41,5 @@ public class CityModel {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-		
+
 }

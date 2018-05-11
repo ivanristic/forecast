@@ -5,7 +5,6 @@
 // Generated on: 2017.02.27 at 09:25:15 AM CET 
 //
 
-
 package com.sargije.ws.wsfaults;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for GenericFaultType complex type.
+ * <p>
+ * Java class for GenericFaultType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="GenericFaultType"&gt;
@@ -35,63 +36,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GenericFaultType", propOrder = {
-    "faultCode",
-    "faultMessages"
-})
+@XmlType(name = "GenericFaultType", propOrder = { "faultCode", "faultMessages" })
 public class GenericFaultType {
 
-    @XmlElement(name = "FaultCode", required = true)
-    protected String faultCode;
-    @XmlElement(name = "FaultMessages", required = true)
-    protected FaultMessagesType faultMessages;
+	@XmlElement(name = "FaultCode", required = true)
+	protected String faultCode;
+	@XmlElement(name = "FaultMessages", required = true)
+	protected FaultMessagesType faultMessages;
 
-    /**
-     * Gets the value of the faultCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFaultCode() {
-        return faultCode;
-    }
+	/**
+	 * Gets the value of the faultCode property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getFaultCode() {
+		return faultCode;
+	}
 
-    /**
-     * Sets the value of the faultCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFaultCode(String value) {
-        this.faultCode = value;
-    }
+	/**
+	 * Sets the value of the faultCode property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setFaultCode(String value) {
+		this.faultCode = value;
+	}
 
-    /**
-     * Gets the value of the faultMessages property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link FaultMessagesType }
-     *     
-     */
-    public FaultMessagesType getFaultMessages() {
-        return faultMessages;
-    }
+	/**
+	 * Gets the value of the faultMessages property.
+	 * 
+	 * @return possible object is {@link FaultMessagesType }
+	 * 
+	 */
+	public FaultMessagesType getFaultMessages() {
+		return faultMessages;
+	}
 
-    /**
-     * Sets the value of the faultMessages property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link FaultMessagesType }
-     *     
-     */
-    public void setFaultMessages(FaultMessagesType value) {
-        this.faultMessages = value;
-    }
+	/**
+	 * Sets the value of the faultMessages property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link FaultMessagesType }
+	 * 
+	 */
+	public void setFaultMessages(FaultMessagesType value) {
+		this.faultMessages = value;
+	}
 
 }

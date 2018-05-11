@@ -12,52 +12,53 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="hidmet", name="prognoza")
+@Table(schema = "hidmet", name = "prognoza")
 public class Forecast {
-	
-   public Forecast() {}
-	
-   public Forecast(Long forecastId, Long maxTemperature, Long minTemperature,
-		   Long active,  Date tableTime, Date syncTime ) {
-      this.forecastId = forecastId;
-      this.maxTemperature = maxTemperature;
-      this.minTemperature = minTemperature;
-      this.active = active;
-      this.tableTime = tableTime;
-      this.syncTime = syncTime;
-   }
-	
+
+	public Forecast() {
+	}
+
+	public Forecast(Long forecastId, Long maxTemperature, Long minTemperature, Long active, Date tableTime,
+			Date syncTime) {
+		this.forecastId = forecastId;
+		this.maxTemperature = maxTemperature;
+		this.minTemperature = minTemperature;
+		this.active = active;
+		this.tableTime = tableTime;
+		this.syncTime = syncTime;
+	}
+
 	@Id
 	@GeneratedValue
-	@Column(name="p_id")
+	@Column(name = "p_id")
 	private Long forecastId;
 
-	@Column(name="p_max_temp")
+	@Column(name = "p_max_temp")
 	private Long maxTemperature;
-	
-	@Column(name="p_min_temp")
+
+	@Column(name = "p_min_temp")
 	private Long minTemperature;
-	
-	@Column(name="p_active")
+
+	@Column(name = "p_active")
 	private Long active;
-	
-	@Column(name="p_table_time")
+
+	@Column(name = "p_table_time")
 	private Date tableTime;
-	
-	@Column(name="p_sync_time")
-	private Date syncTime;	
-	
-	@Column(name="p_image")
+
+	@Column(name = "p_sync_time")
+	private Date syncTime;
+
+	@Column(name = "p_image")
 	private String image;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="p_g_id", referencedColumnName="g_id")
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "p_g_id", referencedColumnName = "g_id")
 	private CityModel cityId;
 
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="p_d_id", referencedColumnName="d_id")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "p_d_id", referencedColumnName = "d_id")
 	private ForecastDate dateId;
-	
+
 	public Long getForecastId() {
 		return forecastId;
 	}

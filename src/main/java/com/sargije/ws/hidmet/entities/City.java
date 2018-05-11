@@ -5,7 +5,6 @@
 // Generated on: 2017.02.27 at 09:25:15 AM CET 
 //
 
-
 package com.sargije.ws.hidmet.entities;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for City complex type.
+ * <p>
+ * Java class for City complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="City"&gt;
@@ -35,54 +36,48 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "City", propOrder = {
-    "cityId",
-    "cityName"
-})
+@XmlType(name = "City", propOrder = { "cityId", "cityName" })
 public class City {
 
-    protected long cityId;
-    @XmlElement(required = true)
-    protected String cityName;
+	protected long cityId;
+	@XmlElement(required = true)
+	protected String cityName;
 
-    /**
-     * Gets the value of the cityId property.
-     * 
-     */
-    public long getCityId() {
-        return cityId;
-    }
+	/**
+	 * Gets the value of the cityId property.
+	 * 
+	 */
+	public long getCityId() {
+		return cityId;
+	}
 
-    /**
-     * Sets the value of the cityId property.
-     * 
-     */
-    public void setCityId(long value) {
-        this.cityId = value;
-    }
+	/**
+	 * Sets the value of the cityId property.
+	 * 
+	 */
+	public void setCityId(long value) {
+		this.cityId = value;
+	}
 
-    /**
-     * Gets the value of the cityName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCityName() {
-        return cityName;
-    }
+	/**
+	 * Gets the value of the cityName property.
+	 * 
+	 * @return possible object is {@link String }
+	 * 
+	 */
+	public String getCityName() {
+		return cityName;
+	}
 
-    /**
-     * Sets the value of the cityName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCityName(String value) {
-        this.cityName = value;
-    }
+	/**
+	 * Sets the value of the cityName property.
+	 * 
+	 * @param value
+	 *            allowed object is {@link String }
+	 * 
+	 */
+	public void setCityName(String value) {
+		this.cityName = value;
+	}
 
 }

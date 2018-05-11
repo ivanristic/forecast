@@ -5,18 +5,20 @@
 // Generated on: 2017.02.27 at 09:25:15 AM CET 
 //
 
-
 package com.sargije.ws.wsfaults;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for MessageLevel.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
+ * Java class for MessageLevel.
+ * 
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
+ * <p>
+ * 
  * <pre>
  * &lt;simpleType name="MessageLevel"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
@@ -32,16 +34,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum MessageLevel {
 
-    INFO,
-    WARNING,
-    ERROR;
+	INFO, WARNING, ERROR;
 
-    public String value() {
-        return name();
-    }
+	public String value() {
+		return name();
+	}
 
-    public static MessageLevel fromValue(String v) {
-        return valueOf(v);
-    }
+	public static MessageLevel fromValue(String v) {
+		return valueOf(v);
+	}
 
 }

@@ -5,7 +5,6 @@
 // Generated on: 2017.02.27 at 09:25:15 AM CET 
 //
 
-
 package com.sargije.ws.hidmet;
 
 import java.util.ArrayList;
@@ -17,11 +16,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import com.sargije.ws.hidmet.entities.CurrentForecast;
 
-
 /**
- * <p>Java class for anonymous complex type.
+ * <p>
+ * Java class for anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -38,42 +39,41 @@ import com.sargije.ws.hidmet.entities.CurrentForecast;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "forecast"
-})
+@XmlType(name = "", propOrder = { "forecast" })
 @XmlRootElement(name = "GetCurrentForecastResponse")
 public class GetCurrentForecastResponse {
 
-    @XmlElement(required = true)
-    protected List<CurrentForecast> forecast;
+	@XmlElement(required = true)
+	protected List<CurrentForecast> forecast;
 
-    /**
-     * Gets the value of the forecast property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the forecast property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getForecast().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link CurrentForecast }
-     * 
-     * 
-     */
-    public List<CurrentForecast> getForecast() {
-        if (forecast == null) {
-            forecast = new ArrayList<CurrentForecast>();
-        }
-        return this.forecast;
-    }
+	/**
+	 * Gets the value of the forecast property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the forecast property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getForecast().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link CurrentForecast }
+	 * 
+	 * 
+	 */
+	public List<CurrentForecast> getForecast() {
+		if (forecast == null) {
+			forecast = new ArrayList<CurrentForecast>();
+		}
+		return this.forecast;
+	}
 
 }

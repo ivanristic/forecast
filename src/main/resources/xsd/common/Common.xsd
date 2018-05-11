@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-			targetNamespace="http://www.sargije.com/ws/common" 
-			xmlns:tns="http://www.sargije.com/ws/common"
-			elementFormDefault="qualified">	
-			
-		<xs:import namespace="http://www.telekomsrbija.com/ws/crm/WSFaults" 
-							schemaLocation="WSFaults.xsd"/>
-			
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.sargije.com/ws/common"
+	xmlns:tns="http://www.sargije.com/ws/common"
+	elementFormDefault="qualified">
+
+	<xs:import
+		namespace="http://www.telekomsrbija.com/ws/crm/WSFaults"
+		schemaLocation="WSFaults.xsd" />
+
 	<xs:complexType name="GenericResponse" abstract="true">
 		<xs:sequence>
-			<xs:element name="Successful" type="xs:boolean" nillable="true"></xs:element>
+			<xs:element name="Successful" type="xs:boolean"
+				nillable="true"></xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	
 
-	
+
+
 </xs:schema>

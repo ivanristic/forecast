@@ -1,26 +1,30 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	xmlns:tns="http://www.sargije.com/ws/hidmet" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.sargije.com/ws/hidmet"
 	xmlns:fs="http://www.sargije.com/ws/hidmet/entities"
-	targetNamespace="http://www.sargije.com/ws/hidmet" 
+	targetNamespace="http://www.sargije.com/ws/hidmet"
 	elementFormDefault="qualified">
-	
-	<xs:import namespace="http://www.sargije.com/ws/hidmet/entities" schemaLocation="Forecast.xsd" />
-    <xs:import namespace="http://www.sargije.com/ws/common" schemaLocation="common/Common.xsd" />
-       
-    <xs:element name="GetCurrentForecastRequest">
-        <xs:complexType>
-            <xs:sequence />
-        </xs:complexType>
-    </xs:element>
 
-    <xs:element name="GetCurrentForecastResponse">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="forecast" type="fs:CurrentForecast" minOccurs="1" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-    
+	<xs:import
+		namespace="http://www.sargije.com/ws/hidmet/entities"
+		schemaLocation="Forecast.xsd" />
+	<xs:import namespace="http://www.sargije.com/ws/common"
+		schemaLocation="common/Common.xsd" />
 
-   
+	<xs:element name="GetCurrentForecastRequest">
+		<xs:complexType>
+			<xs:sequence />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetCurrentForecastResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="forecast" type="fs:CurrentForecast"
+					minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+
 </xs:schema>

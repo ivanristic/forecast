@@ -13,20 +13,20 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="datum")
+@Table(name = "datum")
 public class ForecastDate {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="d_id")
+	@Column(name = "d_id")
 	private Long dateId;
-	
-	@Column(name="d_datum")
+
+	@Column(name = "d_datum")
 	private Date forecastDate;
 
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="dateId")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dateId")
 	private Set<Forecast> forecastFK = new HashSet<Forecast>();
-	
+
 	public Long getDateId() {
 		return dateId;
 	}
@@ -43,5 +43,4 @@ public class ForecastDate {
 		this.forecastDate = forecastDate;
 	}
 
-	
 }

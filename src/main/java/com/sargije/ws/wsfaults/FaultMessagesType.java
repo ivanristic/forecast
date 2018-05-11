@@ -5,7 +5,6 @@
 // Generated on: 2017.02.27 at 09:25:15 AM CET 
 //
 
-
 package com.sargije.ws.wsfaults;
 
 import java.util.ArrayList;
@@ -15,11 +14,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for FaultMessagesType complex type.
+ * <p>
+ * Java class for FaultMessagesType complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="FaultMessagesType"&gt;
@@ -36,41 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FaultMessagesType", propOrder = {
-    "faultMessage"
-})
+@XmlType(name = "FaultMessagesType", propOrder = { "faultMessage" })
 public class FaultMessagesType {
 
-    @XmlElement(name = "FaultMessage", required = true)
-    protected List<FaultMessage> faultMessage;
+	@XmlElement(name = "FaultMessage", required = true)
+	protected List<FaultMessage> faultMessage;
 
-    /**
-     * Gets the value of the faultMessage property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the faultMessage property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getFaultMessage().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link FaultMessage }
-     * 
-     * 
-     */
-    public List<FaultMessage> getFaultMessage() {
-        if (faultMessage == null) {
-            faultMessage = new ArrayList<FaultMessage>();
-        }
-        return this.faultMessage;
-    }
+	/**
+	 * Gets the value of the faultMessage property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a snapshot.
+	 * Therefore any modification you make to the returned list will be present
+	 * inside the JAXB object. This is why there is not a <CODE>set</CODE> method
+	 * for the faultMessage property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getFaultMessage().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link FaultMessage
+	 * }
+	 * 
+	 * 
+	 */
+	public List<FaultMessage> getFaultMessage() {
+		if (faultMessage == null) {
+			faultMessage = new ArrayList<FaultMessage>();
+		}
+		return this.faultMessage;
+	}
 
 }
