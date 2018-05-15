@@ -1,16 +1,17 @@
 package com.sargije.ws.hidmet.app.services.impl;
 
-import java.util.Iterator;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User.UserBuilder;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.sargije.ws.hidmet.app.model.Authorities;
@@ -23,12 +24,13 @@ public class UserDetailsServiceImp implements UserDetailsService {
 	@Autowired
 	UsersRepository usersRepository;
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
 		Users user = usersRepository.findOne(username);
-		
-		UserBuilder builder = null;
+
+		/*UserBuilder builder = null;
 		if (user != null) {
 			builder = org.springframework.security.core.userdetails.User.withUsername(username);
 			//builder.password(new BCryptPasswordEncoder().encode(user.getPassword()));
@@ -44,9 +46,23 @@ public class UserDetailsServiceImp implements UserDetailsService {
 			builder.roles(authorities);
 		} else {
 			throw new UsernameNotFoundException("User not found.");
-		}
+		}*/
+		 
+		 /**
+		  * 
+		  * authorities = new HashSet<GrantedAuthority>(roles.size());
 
-		return builder.build();
+			for (String role : roles)
+			    authorities.add(new SimpleGrantedAuthority("ROLE_" + role));
+		  */
+
+		 Stream<Object> myNewStream = user.getAuthoritieses().stream().map(s -> 
+		 								new SimpleGrantedAuthority(s.getId().getAuthority()));
+		 
+		 return new User(
+              username, user.getPassword(), user.isEnabled(), true, true, true, 
+              (Collection<? extends GrantedAuthority>) Arrays.asList(myNewStream.toArray()));
+		
 	}
 
 }

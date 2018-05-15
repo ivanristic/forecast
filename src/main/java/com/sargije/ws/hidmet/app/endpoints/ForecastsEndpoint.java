@@ -1,6 +1,5 @@
 package com.sargije.ws.hidmet.app.endpoints;
 
-import java.util.List;
 import java.util.ListIterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,15 +10,10 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.sargije.ws.hidmet.GetCurrentForecastRequest;
 import com.sargije.ws.hidmet.GetCurrentForecastResponse;
-import com.sargije.ws.hidmet.app.faults.ServiceFaultException;
 import com.sargije.ws.hidmet.app.model.CurrentForecastModel;
-import com.sargije.ws.hidmet.app.model.MyTable;
 import com.sargije.ws.hidmet.app.repository.CurrentForecastRepository;
-import com.sargije.ws.hidmet.app.repository.MyTableRepository;
 import com.sargije.ws.hidmet.entities.City;
 import com.sargije.ws.hidmet.entities.CurrentForecast;
-import com.sargije.ws.wsfaults.FaultMessage;
-import com.sargije.ws.hidmet.app.faults.*;
 
 @Endpoint
 public class ForecastsEndpoint {
